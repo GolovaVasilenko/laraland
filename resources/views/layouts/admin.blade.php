@@ -14,10 +14,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -63,7 +61,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <a href="#" class="dropdown-item">
                         <!-- Message Start -->
                         <div class="media">
-                            <img src="images/no-avatar.png" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+                            <img src="{{ asset('images/no-avatar.png') }}" alt="User Avatar" class="img-size-50 mr-3 img-circle">
                             <div class="media-body">
                                 <h3 class="dropdown-item-title">
                                     Brad Diesel
@@ -79,7 +77,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <a href="#" class="dropdown-item">
                         <!-- Message Start -->
                         <div class="media">
-                            <img src="images/no-avatar.png" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                            <img src="{{ asset('images/no-avatar.png') }}" alt="User Avatar" class="img-size-50 img-circle mr-3">
                             <div class="media-body">
                                 <h3 class="dropdown-item-title">
                                     John Pierce
@@ -95,7 +93,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <a href="#" class="dropdown-item">
                         <!-- Message Start -->
                         <div class="media">
-                            <img src="images/no-avatar.png" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                            <img src="{{ asset('images/no-avatar.png') }}" alt="User Avatar" class="img-size-50 img-circle mr-3">
                             <div class="media-body">
                                 <h3 class="dropdown-item-title">
                                     Nora Silvester
@@ -150,7 +148,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a href="index3.html" class="brand-link">
-            <img src="images/logo.jpg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+            <img src="{{ asset('images/logo.jpg') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
                  style="opacity: .8">
             <span class="brand-text font-weight-light">LARALAND 1.0</span>
         </a>
@@ -160,21 +158,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- Sidebar user panel (optional) -->
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="image">
-                    <img src="images/no-avatar.png" class="img-circle elevation-2" alt="User Image">
+                    <img src="{{ asset('images/no-avatar.png') }}" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
                     <a href="#" class="d-block">Alexander Pierce</a>
                 </div>
             </div>
-
             @include('admin.partials._main_menu')
         </div>
         <!-- /.sidebar -->
     </aside>
-
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-        @yield('content')
+    <div class="content-wrapper" id="app">
+        <section class="content">
+            <dic class="row">
+                <div class="col-12">
+                    @yield('content')
+                </div>
+            </dic>
+        </section>
     </div>
     <!-- /.content-wrapper -->
 
@@ -203,6 +205,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- REQUIRED SCRIPTS -->
 
 <!-- AdminLTE App -->
-<script src="js/admin.js"></script>
+<script src="{{ asset('js/admin.js') }}"></script>
 </body>
 </html>

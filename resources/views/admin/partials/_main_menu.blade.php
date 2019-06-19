@@ -35,11 +35,11 @@
             </ul>
         </li>
         <li class="nav-item">
-            <a href="#" class="nav-link">
-                <i class="nav-icon fa fa-th"></i>
+            <a href="/admin/settings" class="nav-link">
+                <i class="nav-icon fa fa-database"></i>
                 <p>
-                    Simple Link
-                    <span class="right badge badge-danger">New</span>
+                    Settings
+                    <!--span class="right badge badge-danger">New</span-->
                 </p>
             </a>
         </li>

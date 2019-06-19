@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Category;
+use App\Settings;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class CategoryController extends Controller
+class SettingsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,10 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('admin.categories.index', [
-            'categories' => Category::paginate(10),
+
+        return view('admin.settings.index', [
+            'title_page' => 'Settings data',
+            'settings' => Settings::all()
         ]);
     }
 
@@ -44,10 +46,10 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Category  $category
+     * @param  \App\Settings  $settings
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show(Settings $settings)
     {
         //
     }
@@ -55,10 +57,10 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Category  $category
+     * @param  \App\Settings  $settings
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit(Settings $settings)
     {
         //
     }
@@ -67,10 +69,10 @@ class CategoryController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Category  $category
+     * @param  \App\Settings  $settings
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request, Settings $settings)
     {
         //
     }
@@ -78,10 +80,10 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Category  $category
+     * @param  \App\Settings  $settings
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy(Settings $settings)
     {
         //
     }

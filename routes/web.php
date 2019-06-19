@@ -13,6 +13,7 @@
 
 Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth']], function() {
     Route::get('/', 'DashboardController@index')->name('admin.index');
+    Route::resource('settings', 'SettingsController');
 });
 
 Route::get('/', function () {
