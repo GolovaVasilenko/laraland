@@ -18,6 +18,7 @@ window.Vue = require('vue');
  */
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('products-component', require('./components/ProductsComponent.vue'));
 
 // const files = require.context('./', true, /\.vue$/i)
 

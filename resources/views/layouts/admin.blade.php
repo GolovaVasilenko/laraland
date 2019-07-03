@@ -171,11 +171,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper" id="app">
         <section class="content">
-            <dic class="row">
+            <div class="row">
                 <div class="col-12">
                     @yield('content')
                 </div>
-            </dic>
+            </div>
         </section>
     </div>
     <!-- /.content-wrapper -->
