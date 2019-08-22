@@ -67,6 +67,7 @@
                                 </div>
                             </li>
                         @endguest
+                        <li><cart-component></cart-component></li>
                     </ul>
                 </div>
             </div>

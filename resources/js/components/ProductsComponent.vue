@@ -17,7 +17,7 @@
                             </div>
                             <div class="card-footer">
                                 <a class="btn btn-warning" :href="product.slug">More info</a>
-                                <a class="btn btn-primary" :href="product.id">Add to Cart</a>
+                                <AddToCartComponent :product="product" @addToCart=""></AddToCartComponent>
                             </div>
                         </div>
                     </li>
@@ -37,11 +37,16 @@
 </style>
 
 <script>
+    import AddToCartComponent from './AddToCartComponent';
+
     export default {
         data() {
             return {
                 products: []
             };
+        },
+        components: {
+            AddToCartComponent
         },
         mounted() {
             axios.get('products-on-home')

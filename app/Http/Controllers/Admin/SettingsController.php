@@ -4,9 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Settings;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
-class SettingsController extends Controller
+class SettingsController extends DashboardController
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,6 @@ class SettingsController extends Controller
      */
     public function index()
     {
-
         return view('admin.settings.index', [
             'title_page' => 'Settings data',
             'settings' => Settings::all()
@@ -27,9 +25,9 @@ class SettingsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+
     }
 
     /**
@@ -40,7 +38,8 @@ class SettingsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        dd($data);
     }
 
     /**

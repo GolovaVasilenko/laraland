@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Category;
+use App\Page;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class CategoryController extends DashboardController
+class PageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +15,7 @@ class CategoryController extends DashboardController
      */
     public function index()
     {
-        return view('admin.categories.index', [
-            'categories' => Category::paginate(10),
-        ]);
+        //
     }
 
     /**
@@ -43,10 +42,10 @@ class CategoryController extends DashboardController
     /**
      * Display the specified resource.
      *
-     * @param  \App\Category  $category
+     * @param  \App\Page  $page
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show(Page $page)
     {
         //
     }
@@ -54,10 +53,10 @@ class CategoryController extends DashboardController
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Category  $category
+     * @param  \App\Page  $page
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit(Page $page)
     {
         //
     }
@@ -66,10 +65,10 @@ class CategoryController extends DashboardController
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Category  $category
+     * @param  \App\Page  $page
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request, Page $page)
     {
         //
     }
@@ -77,10 +76,10 @@ class CategoryController extends DashboardController
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Category  $category
+     * @param  \App\Page  $page
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy(Page $page)
     {
         //
     }
