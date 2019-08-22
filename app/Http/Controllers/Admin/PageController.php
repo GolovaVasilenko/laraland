@@ -4,9 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Page;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
-class PageController extends Controller
+class PageController extends DashboardController
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,7 @@ class PageController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**

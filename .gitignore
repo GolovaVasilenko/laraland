@@ -7,6 +7,7 @@
 /.vscode
 /nbproject
 /.vagrant
+docs.txt
 Homestead.json
 Homestead.yaml
 npm-debug.log
