@@ -15,10 +15,16 @@ class CreatePagesTable extends Migration
     {
         Schema::create('pages', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title', 255)->unique();
             $table->string('slug', 255)->unique();
-            $table->text('body')->nullable();
             $table->timestamps();
+        });
+
+        Schema::create('pages_translate', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('page_id')->unsigned();
+            $table->string('title', 255);
+            $table->text('body')->nullable();
+            $table->foreign('page_id')->references('id')->on('pages');
         });
     }
 
@@ -30,5 +36,6 @@ class CreatePagesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('pages');
+        Schema::dropIfExists('pages_translate');
     }
 }

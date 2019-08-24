@@ -173,6 +173,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Yajra\DataTables\DataTablesServiceProvider::class,
+        Spatie\Menu\Laravel\MenuServiceProvider::class,
 
     ],
 
@@ -223,6 +224,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
+        'Menu' => Spatie\Menu\Laravel\Facades\Menu::class,
     ],
 
 ];
