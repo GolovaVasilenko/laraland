@@ -16,3 +16,12 @@ Route::get('about', 'PageController@index')->name('about');
 Auth::routes();
 
 Route::get('home', 'HomeController@index')->name('home');
+
+Route::get('lang/{locale}/', function ($locale) {
+    if (in_array($locale, \Config::get('app.locales'))) {
+        Cookie::queue(
+            Cookie::forever('lang', $locale));
+    }
+
+    return redirect()->back();
+});

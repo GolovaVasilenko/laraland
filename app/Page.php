@@ -12,7 +12,7 @@ class Page extends Model
     public static function getPageBySlug(Request $request)
     {
         $tmp = trim($request->getRequestUri(), '/');
-        $uri = empty($tmp) ? '/' : $tmp;
+        $uri = empty($tmp) ? 'home' : $tmp;
         return self::where('slug', $uri)->first();
     }
 }

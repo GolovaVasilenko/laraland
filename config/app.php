@@ -78,7 +78,9 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'ru',
+
+    'locales' => ['ru', 'en', 'de'],
 
     /*
     |--------------------------------------------------------------------------
@@ -174,6 +176,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Yajra\DataTables\DataTablesServiceProvider::class,
         Spatie\Menu\Laravel\MenuServiceProvider::class,
+        Arrilot\Widgets\ServiceProvider::class,
 
     ],
 
@@ -225,6 +228,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
         'Menu' => Spatie\Menu\Laravel\Facades\Menu::class,
+        'Widget' => Arrilot\Widgets\Facade::class,
+        'AsyncWidget' => Arrilot\Widgets\AsyncFacade::class,
     ],
 
 ];
