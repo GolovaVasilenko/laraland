@@ -1,6 +1,6 @@
 <?php
 
-
+//Route::group(['']);
 Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth']], function() {
     Route::get('/', 'DashboardController@index')->name('admin.index');
 
@@ -21,6 +21,7 @@ Route::get('lang/{locale}/', function ($locale) {
     if (in_array($locale, \Config::get('app.locales'))) {
         Cookie::queue(
             Cookie::forever('lang', $locale));
+        //App::setLocale($locale);
     }
 
     return redirect()->back();
