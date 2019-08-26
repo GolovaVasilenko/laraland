@@ -12,7 +12,7 @@ return [
 	| Supported: "json", "database"
 	|
 	*/
-	'store' => 'json',
+	'store' => 'database',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -38,11 +38,11 @@ return [
 	'connection' => null,
 	// Name of the table used.
 	'table' => 'settings',
-	// If you want to use custom column names in database store you could 
+	// If you want to use custom column names in database store you could
 	// set them in this configuration
 	'keyColumn' => 'key',
 	'valueColumn' => 'value',
-    
+
     /*
     |--------------------------------------------------------------------------
     | Default Settings
