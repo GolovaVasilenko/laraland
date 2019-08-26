@@ -34,7 +34,9 @@ return [
     'social' => 'Social networks',
     'social_desc' => 'You can log in to the system using social media.',
 
-    // Register 'register' => 'Register',
+    //Register
+    'register' => 'Register',
+    'login' => 'Login',
     'logout' => 'Logout',
 
 ];

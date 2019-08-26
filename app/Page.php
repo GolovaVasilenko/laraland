@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use App;
 
 class Page extends Model
 {
@@ -13,6 +14,8 @@ class Page extends Model
     {
         $tmp = trim($request->getRequestUri(), '/');
         $uri = empty($tmp) ? 'home' : $tmp;
-        return self::where('slug', $uri)->first();
+        return self::where('slug', $uri)
+            ->join('pages_translate', 'pages.id', '=', 'pages_translate.page_id')
+            ->where('pages_translate.lang', App::getLocale())->first();
     }
 }

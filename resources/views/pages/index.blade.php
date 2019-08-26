@@ -7,7 +7,6 @@
         </div>
         <div class="row">
             <div class="content-body">
-                @widget('Languages')
                 {{$page->body}}
             </div>
         </div>

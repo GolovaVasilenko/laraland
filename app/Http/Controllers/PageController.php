@@ -14,7 +14,9 @@ class PageController extends Controller
      */
     public function index(Request $request)
     {
-        return view('pages.index', ['page' => Page::getPageBySlug($request)]);
+        return view('pages.index',
+            ['page' => Page::getPageBySlug($request)]
+        );
     }
 
 }
