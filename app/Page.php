@@ -8,7 +8,7 @@ use App;
 
 class Page extends Model
 {
-    protected $fillable = ['title', 'slug', 'body'];
+    protected $fillable = ['slug'];
 
     public static function getPageBySlug(Request $request)
     {

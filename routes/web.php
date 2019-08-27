@@ -4,8 +4,12 @@
 Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth']], function() {
     Route::get('/', 'DashboardController@index')->name('admin.index');
 
-    Route::resource('settings', 'SettingsController');
-
+    //Settings
+    Route::get('settings', 'SettingsController@index')->name('settings.list');
+    Route::post('settings', 'SettingsController@store')->name('settings.store');
+    Route::get('settings/edit/{id}', 'SettingsController@edit')->name('settings.edit');
+    Route::put('settings/update', 'SettingsController@update')->name('settings.update');
+    Route::get('settings/remove/{id}', 'SettingsController@remove')->name('settings.delete');
 
 });
 
