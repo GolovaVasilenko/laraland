@@ -7,7 +7,15 @@
             <a href="/admin" class="nav-link active">
                 <i class="nav-icon fa fa-dashboard"></i>
                 <p>
-                    Dashboard
+                    {{ trans('menu.dashboard') }}
+                </p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="/admin/pages" class="nav-link">
+                <i class="nav-icon fa fa-book"></i>
+                <p>
+                    {{ trans('menu.menu_pages') }}
                 </p>
             </a>
         </li>
@@ -35,10 +43,10 @@
             </ul>
         </li-->
         <li class="nav-item">
-            <a href="/admin/settings" class="nav-link">
-                <i class="nav-icon fa fa-database"></i>
+            <a href="{{ route('settings.list') }}" class="nav-link">
+                <i class="nav-icon fa fa-cog"></i>
                 <p>
-                    Settings
+                {{ trans('menu.menu_settings') }}
                     <!--span class="right badge badge-danger">New</span-->
                 </p>
             </a>

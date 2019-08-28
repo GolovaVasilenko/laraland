@@ -8,15 +8,32 @@ use Illuminate\Http\Request;
 class PageController extends DashboardController
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @throws \Exception
      */
     public function index()
     {
-
+        return view('admin.pages.index');
     }
 
+    public function ajax()
+    {
+        return datatables()->of(Page::getAllPages())
+            ->addColumn('action', function($data) {
+                $button = '<button type="button" name="edit"
+                        id="' . $data->id . '" title="edit" 
+                        class="edit btn btn-info btn-sm">
+                        <i class="fa fa-edit"></i></button>';
+                $button .= "&nbsp;&nbsp;&nbsp;";
+                $button .= '<button type="button" name="delete"
+                        id="' . $data->id . '" title="delete"
+                        class="delete btn btn-danger btn-sm">
+                        <i class="fa fa-times"></i></button>';
+                return $button;
+            })
+            ->rawColumns(['action'])
+            ->make(true);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -24,7 +41,7 @@ class PageController extends DashboardController
      */
     public function create()
     {
-        //
+        return view('admin.pages.add');
     }
 
     /**

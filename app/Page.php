@@ -18,4 +18,11 @@ class Page extends Model
             ->join('pages_translate', 'pages.id', '=', 'pages_translate.page_id')
             ->where('pages_translate.lang', App::getLocale())->first();
     }
+
+    public static function getAllPages()
+    {
+        return self::query()
+            ->join('pages_translate', 'pages.id', '=', 'pages_translate.page_id')
+            ->where('pages_translate.lang', App::getLocale())->get();
+    }
 }

@@ -1,6 +1,5 @@
 <?php
 
-//Route::group(['']);
 Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth']], function() {
     Route::get('/', 'DashboardController@index')->name('admin.index');
 
@@ -11,6 +10,10 @@ Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth']], 
     Route::put('settings/update', 'SettingsController@update')->name('settings.update');
     Route::get('settings/remove/{id}', 'SettingsController@remove')->name('settings.delete');
 
+    //Pages
+    Route::get('pages', 'PageController@index')->name('pages.list');
+    Route::get('pages/ajax', 'PageController@ajax')->name('pages.data');
+    Route::get('pages/add', 'PageController@add')->name('pages.add');
 });
 
 Route::get('/', 'PageController@index')->name('main');

@@ -11,6 +11,8 @@ require('./bootstrap');
 
 require('admin-lte');
 
+require('admin-lte/plugins/datatables/jquery.dataTables.min');
+
 require('./custom');
 
 window.Vue = require('vue');
