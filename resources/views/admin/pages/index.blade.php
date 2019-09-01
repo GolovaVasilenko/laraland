@@ -8,24 +8,24 @@
                     <h3 class="card-title">{{ trans('pages.title_page_list') }}</h3>
                 </div>
                 <div class="add-page-btn-wrapper col-3">
-                    <a href="" class="btn btn-info">{{ trans('pages.add_btn') }}</a>
+                    <a href="{{ route('pages.create') }}" class="btn btn-info">{{ trans('pages.add_btn') }}</a>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="card-body">
-        <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4"></div>
-        <table class="table table-bordered table-striped dataTable" id="example1">
-            <thead>
-            <tr>
-                <th>{{ trans('pages.col_id') }}</th>
-                <th>{{ trans('pages.col_title') }}</th>
-                <th>{{ trans('pages.col_slug') }}</th>
-                <th>{{ trans('pages.col_created') }}</th>
-                <th>{{ trans('pages.col_action') }}</th>
-            </tr>
-            </thead>
-        </table>
+        <div class="card-body">
+            <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4"></div>
+            <table class="table table-bordered table-striped dataTable" id="example1">
+                <thead>
+                <tr>
+                    <th>{{ trans('pages.col_id') }}</th>
+                    <th>{{ trans('pages.col_title') }}</th>
+                    <th>{{ trans('pages.col_slug') }}</th>
+                    <th>{{ trans('pages.col_created') }}</th>
+                    <th>{{ trans('pages.col_action') }}</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
     </div>
 @endsection
 

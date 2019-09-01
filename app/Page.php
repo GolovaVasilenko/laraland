@@ -10,6 +10,11 @@ class Page extends Model
 {
     protected $fillable = ['slug'];
 
+    public function translate()
+    {
+        return $this->hasOne(PagesTranslate::class);
+    }
+
     public static function getPageBySlug(Request $request)
     {
         $tmp = trim($request->getRequestUri(), '/');
@@ -22,7 +27,13 @@ class Page extends Model
     public static function getAllPages()
     {
         return self::query()
+            ->select('pages.id',
+                'pages.slug',
+                'pages.created_at',
+                'pages_translate.lang',
+                'pages_translate.title'
+                )
             ->join('pages_translate', 'pages.id', '=', 'pages_translate.page_id')
-            ->where('pages_translate.lang', App::getLocale())->get();
+            ->where('pages_translate.lang', App::getLocale())->latest();
     }
 }

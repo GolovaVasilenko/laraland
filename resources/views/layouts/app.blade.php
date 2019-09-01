@@ -39,7 +39,9 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
+                        @if(\App\Settings::checkTranslate())
                         <li>@widget('Languages')</li>
+                        @endif
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ trans('auth.login') }}</a>

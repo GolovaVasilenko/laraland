@@ -13,7 +13,11 @@ Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth']], 
     //Pages
     Route::get('pages', 'PageController@index')->name('pages.list');
     Route::get('pages/ajax', 'PageController@ajax')->name('pages.data');
-    Route::get('pages/add', 'PageController@add')->name('pages.add');
+    Route::get('pages/edit/{id}', 'PageController@edit')->name('pages.edit');
+    Route::get('pages/create', 'PageController@create')->name('pages.create');
+    Route::post('pages', 'PageController@store')->name('pages.store');
+    Route::put('pages/update', 'PageController@update')->name('pages.update');
+    Route::get('pages/remove/{id}', 'PageController@destroy')->name('pages.remove');
 });
 
 Route::get('/', 'PageController@index')->name('main');

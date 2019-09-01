@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Page;
+use App\PagesTranslate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class PageController extends DashboardController
 {
@@ -20,15 +22,15 @@ class PageController extends DashboardController
     {
         return datatables()->of(Page::getAllPages())
             ->addColumn('action', function($data) {
-                $button = '<button type="button" name="edit"
+                $button = '<a href="' . route('pages.edit', ['id' => $data->id]). '" name="edit"
                         id="' . $data->id . '" title="edit" 
                         class="edit btn btn-info btn-sm">
-                        <i class="fa fa-edit"></i></button>';
+                        <i class="fa fa-edit"></i></a>';
                 $button .= "&nbsp;&nbsp;&nbsp;";
-                $button .= '<button type="button" name="delete"
+                $button .= '<a href="' . route('pages.remove', ['id' => $data->id]). '" name="delete"
                         id="' . $data->id . '" title="delete"
                         class="delete btn btn-danger btn-sm">
-                        <i class="fa fa-times"></i></button>';
+                        <i class="fa fa-times"></i></a>';
                 return $button;
             })
             ->rawColumns(['action'])
@@ -52,19 +54,28 @@ class PageController extends DashboardController
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'title' => 'required',
+            'slug' => 'required',
+        ]);
+
+        $data = $request->all();
+        $page = Page::create([
+            'slug' => $data['slug']
+        ]);
+
+        $page->translate()->create([
+            'title' => $data['title'],
+            'body' => $data['body'],
+            'lang' => App::getLocale(),
+            'meta_title' => $data['meta_title'],
+            'meta_description' => $data['meta_description']
+        ]);
+
+        return redirect()->route('pages.list')
+            ->with(['flash_message'=> trans('pages.success_created')]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Page  $page
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Page $page)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -72,9 +83,15 @@ class PageController extends DashboardController
      * @param  \App\Page  $page
      * @return \Illuminate\Http\Response
      */
-    public function edit(Page $page)
+    public function edit($id)
     {
-        //
+        $page = Page::with(['translate' => function($query) {
+            $query->where('lang' , App::getLocale());
+        }])
+            ->where('id' , $id)
+            ->first();
+
+        return view('admin.pages.edit', ['page' => $page]);
     }
 
     /**
@@ -84,9 +101,27 @@ class PageController extends DashboardController
      * @param  \App\Page  $page
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Page $page)
+    public function update(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'title' => 'required',
+        ]);
+
+        $data = $request->all();
+
+        $page_translate = PagesTranslate::where('page_id', $request->get('id'))
+            ->where('lang', App::getLocale())
+            ->first();
+
+        $page_translate->title = $data['title'];
+        $page_translate->body = $data['body'];
+        $page_translate->lang = App::getLocale();
+        $page_translate->meta_title = $data['meta_title'];
+        $page_translate->meta_description = $data['meta_description'];
+        $page_translate->save();
+
+        return redirect()->route('pages.edit', ['id' => $data['id']])
+            ->with(['flash_message'=> trans('pages.success_update')]);
     }
 
     /**
@@ -95,8 +130,12 @@ class PageController extends DashboardController
      * @param  \App\Page  $page
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Page $page)
+    public function destroy($id)
     {
-        //
+        $page = Page::where('id', $id)->first();
+        $page->delete();
+
+        return redirect()->route('pages.list')
+            ->with(['flash_message'=> trans('pages.success_delete')]);
     }
 }

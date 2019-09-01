@@ -1,4 +1,5 @@
 <?php
 return [
-    'home_link' => 'Home'
+    'home_link' => 'Home',
+    'save' => 'Save',
 ];

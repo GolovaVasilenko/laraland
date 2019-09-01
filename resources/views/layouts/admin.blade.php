@@ -37,6 +37,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Right navbar links -->
         <ul class="navbar-nav ml-auto">
             <!-- Messages Dropdown Menu -->
+            @if(\App\Settings::checkTranslate())
+            <li class="nav-item">@widget('Languages')</li>
+            @endif
             <li class="nav-item">
                 <a class="dropdown-item" href="{{ route('logout') }}"
                    onclick="event.preventDefault();
