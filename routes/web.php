@@ -18,6 +18,16 @@ Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth']], 
     Route::post('pages', 'PageController@store')->name('pages.store');
     Route::put('pages/update', 'PageController@update')->name('pages.update');
     Route::get('pages/remove/{id}', 'PageController@destroy')->name('pages.remove');
+
+    //Menu
+    Route::get('menu', 'MenuController@index')->name('menu.list');
+    Route::get('menu/create', 'MenuController@create')->name('menu.create');
+    Route::get('menu/edit/{id}', 'MenuController@edit')->name('menu.edit');
+    Route::post('menu', 'MenuController@store')->name('menu.store');
+    Route::put('menu/update', 'MenuController@update')->name('menu.update');
+    Route::get('menu/delete/{id}', 'MenuController@destroy')->name('menu.delete');
+
+    Route::get('menu/items/{menu_id}', 'MenuController@itemsList')->name('menu.items');
 });
 
 Route::get('/', 'PageController@index')->name('main');

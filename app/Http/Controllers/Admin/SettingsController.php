@@ -5,8 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App;
 use App\Settings;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class SettingsController extends DashboardController
+class SettingsController extends Controller
 {
     public function index()
     {

@@ -19,6 +19,14 @@
                 </p>
             </a>
         </li>
+        <li class="nav-item">
+            <a href="{{ route('menu.list') }}" class="nav-link">
+                <i class="nav-icon fa fa-navicon"></i>
+                <p>
+                    Menu
+                </p>
+            </a>
+        </li>
         <!--li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link">
                 <i class="nav-icon fa fa-pencil"></i>

@@ -6,8 +6,10 @@ use App\Page;
 use App\PagesTranslate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use App\Http\Controllers\Controller;
 
-class PageController extends DashboardController
+
+class PageController extends Controller
 {
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
