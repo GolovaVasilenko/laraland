@@ -63,6 +63,8 @@ class MenuController extends Controller
 
     public function itemsList($menu_id)
     {
+        $menu = Menu::tree('test menu 123');
+
         return view('admin.menu.items', [
             'items' => MenuItems::where('menu_id', $menu_id)
                 ->where('lang', \App::getLocale())
@@ -71,18 +73,41 @@ class MenuController extends Controller
         ]);
     }
 
-    public function itemCreate($menu_id)
+    public function sortable(Request $request)
     {
-        return view('admin.menu.item_add', [
-            'items' => MenuItems::where('menu_id', $menu_id)
-                ->where('lang', \App::getLocale())
-                ->get(),
-            'menu' => Menu::where('id', $menu_id)->first(),
-        ]);
+        if($request->ajax()) {
+            $items = json_decode($request->get('output'));
+            $this->setPosition($items);
+        }
+    }
+
+    private function setPosition($arrayData, $parent = null)
+    {
+        $count = 0;
+        foreach($arrayData as $item) {
+            $model = MenuItems::find($item->id);
+            $model->position = ++$count;
+            $model->parent_id = $parent;
+
+            $model->save();
+            if(isset($item->children)) {
+                $this->setPosition($item->children, $item->id);
+            }
+        }
     }
 
     public function itemStore(Request $request)
     {
+        $request->validate([
+            'link' => 'required',
+            'label' => 'required',
+        ]);
+
+        $items = MenuItems::create($request->all());
+
+        return redirect()->route('menu.items', [
+            'menu_id' => $items->menu_id
+        ]);
 
     }
 

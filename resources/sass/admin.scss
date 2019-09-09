@@ -13,9 +13,6 @@ $fa-font-path: "../webfonts";
 
 @import '~admin-lte/plugins/datatables/jquery.dataTables.css';
 
-@import '~admin-lte/plugins/font-awesome/css/font-awesome.css';
+@import './nestable';
 
-.navbar-laravel {
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-}
+@import '~admin-lte/plugins/font-awesome/css/font-awesome.css';

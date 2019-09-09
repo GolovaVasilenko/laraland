@@ -15,6 +15,8 @@ require('admin-lte/plugins/datatables/jquery.dataTables.min');
 
 require('./jquery.friendurl');
 
+require('./jquery.nestable');
+
 require('./custom');
 
 window.Vue = require('vue');
