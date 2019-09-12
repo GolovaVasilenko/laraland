@@ -41,7 +41,7 @@
                         </div>
                         <div class="form-group">
                             <select name="parent_id" class="form-control">
-                                <option value="">Root</option>
+                                <option value="0">Root</option>
                                 @foreach($menu->menuItems as $item)
                                     <option value="{{ $item->id }}">{{ $item->label }}</option>
                                 @endforeach

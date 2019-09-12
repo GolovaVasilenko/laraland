@@ -30,6 +30,8 @@ Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth']], 
     Route::get('menu/items/{menu_id}', 'MenuController@itemsList')->name('menu.items');
     Route::post('menu/item/store', 'MenuController@itemStore')->name('menu.item.store');
     Route::post('menu/sortable', 'MenuController@sortable')->name('menu.sortable');
+    Route::get('menu/item/edit/{id}', 'MenuController@itemEdit')->name('menu.item.edit');
+    Route::get('menu/item/store/{id}', 'MenuController@itemDelete')->name('menu.item.delete');
 });
 
 Route::get('/', 'PageController@index')->name('main');

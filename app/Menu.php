@@ -26,28 +26,35 @@ class Menu extends Model
 
     public static function tree($name)
     {
-        $results = [];
         $menu = self::getMenu($name)->toArray();
-
-        foreach($menu as $item) {
-            if($item['parent_id'] === null) {
-                $results[] = $item;
-            }
-        }
-        foreach($menu as $item) {
-            if($item['parent_id'] !== null) {
-                $results = self::setChildren($menu, $item, $results);
-            }
-        }
-        return $results;
+//dd(self::setChildren($menu));
+        return self::setChildren($menu);
     }
 
-    public static function setChildren($menu, $child, $results) {
-        foreach($menu as $i){
-            if($i['id'] == $child['parent_id']) {
-                $results[$child['parent_id']]['children'][$child['id']] = $child;
+    private static function setChildren($dataset)
+    {
+        $tree = [];
+        $tmp = [];
+        foreach ($dataset as $key => $node) {
+            $tmp[$node['parent_id']][$node['id']] = $node;
+        }
+        $tree = $tmp[0];
+        self::generateElement($tree, $tmp);
+        //dd($tree);
+        return $tree;
+    }
+
+    private static function generateElement(&$dataTree, $arrData)
+    {
+        foreach ($dataTree as $key => $item) {
+            if(!isset($item['children'])) {
+                $dataTree[$key]['children'] = [];
+            }
+
+            if(array_key_exists($key, $arrData)) {
+                $dataTree[$key]['children'] = $arrData[$key];
+                self::generateElement($dataTree[$key]['children'], $arrData);
             }
         }
-        return $results;
     }
 }

@@ -77,16 +77,17 @@ class MenuController extends Controller
     {
         if($request->ajax()) {
             $items = json_decode($request->get('output'));
+            //dd($items);
             $this->setPosition($items);
         }
     }
 
-    private function setPosition($arrayData, $parent = null)
+    private function setPosition($arrayData, $parent = 0)
     {
-        $count = 0;
+        $count = 1;
         foreach($arrayData as $item) {
             $model = MenuItems::find($item->id);
-            $model->position = ++$count;
+            $model->position = $count++;
             $model->parent_id = $parent;
 
             $model->save();
