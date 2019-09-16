@@ -17,4 +17,5 @@ return [
     'delete_success_message' => 'Menu removed successfully',
     'add_item' => 'Add new item',
     'item_edit_success_message' => 'Menu item edited successfully',
+    'item_delete_success_message' => 'Menu item removed successfully',
 ];

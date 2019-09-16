@@ -17,4 +17,5 @@ return [
     'delete_success_message' => 'Меню удалено',
     'add_item' => 'Добавить новый пункт меню',
     'item_edit_success_message' => 'Пункт меню успешно изменен',
+    'item_delete_success_message' => 'Пункт меню успешно удален',
 ];

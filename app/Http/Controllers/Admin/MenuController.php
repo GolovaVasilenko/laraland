@@ -132,11 +132,15 @@ class MenuController extends Controller
         $item->save();
 
         return redirect()->route('menu.items', ['id' => $item->menu_id])
-            ->with(['flash_message' => trans('menu.item_edit_success_message')])
+            ->with(['flash_message' => trans('menu.item_edit_success_message')]);
     }
 
     public function itemDelete($id)
     {
-
+        $item = MenuItems::find($id);
+        $menu_id = $item->menu_id;
+        $item->delete();
+        return redirect()->route('menu.items', ['id' => $menu_id])
+            ->with(['flash_message' => trans('menu.item_delete_success_message')]);
     }
 }
