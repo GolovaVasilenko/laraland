@@ -32,6 +32,7 @@ Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth']], 
     Route::post('menu/sortable', 'MenuController@sortable')->name('menu.sortable');
     Route::get('menu/item/edit/{id}', 'MenuController@itemEdit')->name('menu.item.edit');
     Route::get('menu/item/store/{id}', 'MenuController@itemDelete')->name('menu.item.delete');
+    Route::put('menu/item/update', 'MenuController@itemUpdate')->name('menu.item.update');
 });
 
 Route::get('/', 'PageController@index')->name('main');

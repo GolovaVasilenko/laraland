@@ -24,7 +24,9 @@
                                     </div>
                                 </div>
                             </div>
-                        </div></div><div class="owl-item cloned" style="width: 1139px;"><div class="single-slider height-100vh bg-img" data-dot="02" style="background-image:url(assets/images/slider/hm1-bg-1.jpg);">
+                        </div>
+                    </div>
+                    <div class="owl-item cloned" style="width: 1139px;"><div class="single-slider height-100vh bg-img" data-dot="02" style="background-image:url(assets/images/slider/hm1-bg-1.jpg);">
                             <div class="container">
                                 <div class="row align-items-center">
                                     <div class="col-lg-5 col-md-6 col-12 col-sm-6">

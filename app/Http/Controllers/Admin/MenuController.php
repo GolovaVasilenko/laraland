@@ -114,12 +114,25 @@ class MenuController extends Controller
 
     public function itemEdit($id)
     {
+        $item = MenuItems::find($id);
 
+        return view('admin.menu.item_edit', ['item' => $item]);
     }
 
     public function itemUpdate(Request $request)
     {
+        $request->validate([
+            'link' => 'required',
+            'label' => 'required',
+        ]);
 
+        $item = MenuItems::find($request->get('id'));
+        $item->label = $request->get('label');
+        $item->link = $request->get('link');
+        $item->save();
+
+        return redirect()->route('menu.items', ['id' => $item->menu_id])
+            ->with(['flash_message' => trans('menu.item_edit_success_message')])
     }
 
     public function itemDelete($id)

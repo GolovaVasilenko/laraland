@@ -19,7 +19,7 @@ require('./jquery.nestable');
 
 require('./custom');
 
-window.Vue = require('vue');
+/*window.Vue = require('vue');*/
 
 /**
  * The following block of code may be used to automatically register your
@@ -43,6 +43,6 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
+/*const app = new Vue({
     el: '#app'
-});
+});*/
