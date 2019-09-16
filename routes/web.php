@@ -35,8 +35,8 @@ Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth']], 
 });
 
 Route::get('/', 'PageController@index')->name('main');
-Route::get('about', 'PageController@index')->name('about');
-Route::get('contacts', 'PageController@index')->name('contacts');
+Route::get('about', 'PageController@getPage')->name('about');
+Route::get('contacts', 'PageController@getPage')->name('contacts');
 //Route::get('products-on-home', 'ProductController@home')->name('products-on-home');
 
 Auth::routes();

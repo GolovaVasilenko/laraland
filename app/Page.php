@@ -24,6 +24,13 @@ class Page extends Model
             ->where('pages_translate.lang', App::getLocale())->first();
     }
 
+    public static function getHomePage()
+    {
+        return self::where('slug', 'glavnaya')
+            ->join('pages_translate', 'pages.id', '=', 'pages_translate.page_id')
+            ->where('pages_translate.lang', App::getLocale())->first();
+    }
+
     public static function getAllPages()
     {
         return self::query()

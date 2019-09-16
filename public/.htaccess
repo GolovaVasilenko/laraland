@@ -4,7 +4,7 @@
     </IfModule>
 
     RewriteEngine On
-
+    #RewriteBase /home/alexey/www/laraland.loc/public
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]

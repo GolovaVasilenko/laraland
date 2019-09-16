@@ -16,11 +16,6 @@ class AddMetaDataToPagesTranslateTable extends Migration
         Schema::table('pages_translate', function (Blueprint $table) {
             $table->string('meta_title', 255)->nullable();
             $table->text('meta_description')->nullable();
-
-            $table->foreign('page_id')
-                ->references('id')->on('pages')
-                ->onDelete('cascade');
-
         });
     }
 
@@ -34,7 +29,6 @@ class AddMetaDataToPagesTranslateTable extends Migration
         Schema::table('pages_translate', function (Blueprint $table) {
             $table->dropColumn('meta_title');
             $table->dropColumn('meta_description');
-            $table->dropForeign(['page_id']);
         });
     }
 }

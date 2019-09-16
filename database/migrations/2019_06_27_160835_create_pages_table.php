@@ -35,6 +35,7 @@ class CreatePagesTable extends Migration
      */
     public function down()
     {
+        Schema::dropForeign(['page_id']);
         Schema::dropIfExists('pages');
         Schema::dropIfExists('pages_translate');
     }

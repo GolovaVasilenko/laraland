@@ -12,11 +12,17 @@ class PageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
+    {
+        return view('pages.index',
+            ['page' => Page::getHomePage()]
+        );
+    }
+
+    public function getPage(Request $request)
     {
         return view('pages.index',
             ['page' => Page::getPageBySlug($request)]
         );
     }
-
 }

@@ -38,7 +38,7 @@ class Menu extends Model
         foreach ($dataset as $key => $node) {
             $tmp[$node['parent_id']][$node['id']] = $node;
         }
-        $tree = $tmp[0];
+        $tree = isset($tmp[0]) ? $tmp[0] : [];
         self::generateElement($tree, $tmp);
         //dd($tree);
         return $tree;
