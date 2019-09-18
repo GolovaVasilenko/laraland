@@ -4,10 +4,10 @@
     Version: 2
 
 -----------------------------------------------------------------------------------
-    
+
     CSS INDEX
     ===================
-	
+
     1. Template default CSS
     2. Header style
     3. Slider style
@@ -34,7 +34,7 @@
     24. Compare style
     25. My account style
     26. About us style
-    
+
 -----------------------------------------------------------------------------------*/
 /*----------------------------------------*/
 /*  1. Template default CSS
@@ -42,6 +42,23 @@
 /*-- Google Font --*/
 @import url("https://fonts.googleapis.com/css?family=Marck+Script|Poppins:300,400,500,600,700|Roboto+Mono:400,500,700|Roboto+Slab:300,400,700|Roboto:300,400,500,700,900");
 /*-- Common Style --*/
+
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans:300,400,500,700,800,900&display=swap');
+
+@font-face {
+    font-family: 'Kallisto';
+    src: url('../fonts/Kallisto-Medium.eot');
+    src: url('../fonts/Kallisto-Medium.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Kallisto-Medium.woff2') format('woff2'),
+    url('../fonts/Kallisto-Medium.woff') format('woff'),
+    url('../fonts/Kallisto-Medium.ttf') format('truetype'),
+    url('../fonts/Kallisto-Medium.svg#Kallisto-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+
 *,
 *::after,
 *::before {
@@ -157,7 +174,7 @@ ul {
   padding: 0;
 }
 
-/*-- 
+/*--
     - Common Classes
 -----------------------------------------*/
 .fix {
@@ -1252,7 +1269,7 @@ a:hover {
 }
 
 /***************************
-    Page section padding 
+    Page section padding
 ****************************/
 .ptb-0 {
   padding: 0;
@@ -1367,7 +1384,7 @@ a:hover {
 }
 
 /***************************
-    Page section margin 
+    Page section margin
 ****************************/
 .mtb-0 {
   margin: 0;
@@ -1441,7 +1458,7 @@ a:hover {
   margin: 290px 0;
 }
 
-/*-- 
+/*--
     - Input Placeholder
 -----------------------------------------*/
 input:-moz-placeholder,
@@ -1587,8 +1604,8 @@ button, input, optgroup, select, textarea {
   }
 }
 
-/*-- 
-    Scroll Up 
+/*--
+    Scroll Up
 -----------------------------------------*/
 #scrollUp {
   width: 50px;
@@ -15368,6 +15385,96 @@ h3.cart-page-title {
   text-align: center;
   font-weight: 500;
 }
+
+.bg-left {
+    background: #f5e8d5;
+    clip-path: polygon(50% 0, 50% 33%, 35% 33%, 35% 67%, 50% 67%, 50% 100%, 0 100%, 0 0);
+    height: 100vh;
+}
+
+.bg-right {
+    background-color: #f7eedf;
+}
+.first-screen {
+    position: relative;
+    background-color: #f7eedf;
+}
+.hero-logo {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.hero-logo h1 {
+    font-size: 72px;
+}
+.button-down {
+    padding: 4px 8px;
+    font-size: 36px;
+    position: relative;
+    top: 46px;
+}
+.hero-logo p {
+    font-size: 32px;
+}
+
+.discount-img:before{
+    background-color: #f5e8d5;
+}
+.logo img {
+    max-width: 150px;
+}
+.lg-text-h1 {
+    display: block;
+    font-family: 'Kallisto', sans-serif;
+    font-size: 140px;
+}
+.main-hero-h1 {
+    font-size: 48px!important;
+    font-family: 'Alegreya Sans', sans-serif;
+}
+.brand-simple-text {
+    font-family: 'Kallisto', sans-serif;
+    text-transform: uppercase;
+}
+
+.main-menu nav {
+    text-align: right;
+}
+
+/* gallery about us */
+.gallery-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 280px);
+    grid-gap: 16px;
+}
+.first-item {
+    grid-row: 1/3;
+}
+.text-item {
+    grid-column: 2/4;
+    padding: 26px;
+
+}
+.text-item p {
+    line-height: 1.5em;
+    font-size: 26px!important;
+    color: #fff;
+}
+.gallery-thumb-box {
+    overflow: hidden;
+    /*background-color: #f5e8d5;*/
+    background-color: #0c0c0c;
+}
+.gallery-thumb-box img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+/* END gallery about us */
 
 @media only screen and (max-width: 767px) {
   .cart-table-content table tbody > tr td {

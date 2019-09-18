@@ -2,131 +2,18 @@
 
 @section('content')
 
-    <div class="slider-area pt-100 pb-100">
-        <div class="slider-active owl-carousel nav-style-1 dot-style-1 nav-dot-left owl-loaded owl-drag">
-            <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-2278px, 0px, 0px); transition: all 0s ease 0s; width: 6834px;"><div class="owl-item cloned" style="width: 1139px;"><div class="single-slider height-100vh bg-img" data-dot="01" style="background-image:url(assets/images/slider/hm1-bg-1.jpg);">
-                            <div class="container">
-                                <div class="row align-items-center">
-                                    <div class="col-lg-5 col-md-6 col-12 col-sm-6">
-                                        <div class="slider-sin-img-hm1 slider-sin-mrg1 slider-animated-1">
-                                            <img class="animated" src="assets/images/slider/hm1-single-1.png" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-7 col-md-6 col-12 col-sm-6">
-                                        <div class="slider-content-1 slider-animated-1 ml-70">
-                                            <h3 class="animated">30% off</h3>
-                                            <h1 class="animated">Comfort Chair</h1>
-                                            <p class="animated">Collect from Daxone &amp; get 30% Discount.</p>
-                                            <div class="slider-btn-1 default-btn btn-hover">
-                                                <a class="animated btn-color-theme btn-size-md btn-style-outline" href="product-details.html">SHOP NOW</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="owl-item cloned" style="width: 1139px;"><div class="single-slider height-100vh bg-img" data-dot="02" style="background-image:url(assets/images/slider/hm1-bg-1.jpg);">
-                            <div class="container">
-                                <div class="row align-items-center">
-                                    <div class="col-lg-5 col-md-6 col-12 col-sm-6">
-                                        <div class="slider-sin-img-hm1 slider-sin-mrg1 slider-animated-1">
-                                            <img class="animated" src="assets/images/slider/hm1-single-2.png" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-7 col-md-6 col-12 col-sm-6">
-                                        <div class="slider-content-1 slider-animated-1 ml-70">
-                                            <h3 class="animated">30% off</h3>
-                                            <h1 class="animated">Comfort Chair</h1>
-                                            <p class="animated">Collect from Daxone &amp; get 30% Discount.</p>
-                                            <div class="slider-btn-1 default-btn btn-hover">
-                                                <a class="animated btn-color-theme btn-size-md btn-style-outline" href="product-details.html">SHOP NOW</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div></div><div class="owl-item active" style="width: 1139px;"><div class="single-slider height-100vh bg-img" data-dot="01" style="background-image:url(assets/images/slider/hm1-bg-1.jpg);">
-                            <div class="container">
-                                <div class="row align-items-center">
-                                    <div class="col-lg-5 col-md-6 col-12 col-sm-6">
-                                        <div class="slider-sin-img-hm1 slider-sin-mrg1 slider-animated-1">
-                                            <img class="animated" src="assets/images/slider/hm1-single-1.png" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-7 col-md-6 col-12 col-sm-6">
-                                        <div class="slider-content-1 slider-animated-1 ml-70">
-                                            <h3 class="animated">30% off</h3>
-                                            <h1 class="animated">Comfort Chair</h1>
-                                            <p class="animated">Collect from Daxone &amp; get 30% Discount.</p>
-                                            <div class="slider-btn-1 default-btn btn-hover">
-                                                <a class="animated btn-color-theme btn-size-md btn-style-outline" href="product-details.html">SHOP NOW</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div></div><div class="owl-item" style="width: 1139px;"><div class="single-slider height-100vh bg-img" data-dot="02" style="background-image:url(assets/images/slider/hm1-bg-1.jpg);">
-                            <div class="container">
-                                <div class="row align-items-center">
-                                    <div class="col-lg-5 col-md-6 col-12 col-sm-6">
-                                        <div class="slider-sin-img-hm1 slider-sin-mrg1 slider-animated-1">
-                                            <img class="animated" src="assets/images/slider/hm1-single-2.png" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-7 col-md-6 col-12 col-sm-6">
-                                        <div class="slider-content-1 slider-animated-1 ml-70">
-                                            <h3 class="animated">30% off</h3>
-                                            <h1 class="animated">Comfort Chair</h1>
-                                            <p class="animated">Collect from Daxone &amp; get 30% Discount.</p>
-                                            <div class="slider-btn-1 default-btn btn-hover">
-                                                <a class="animated btn-color-theme btn-size-md btn-style-outline" href="product-details.html">SHOP NOW</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div></div><div class="owl-item cloned" style="width: 1139px;"><div class="single-slider height-100vh bg-img" data-dot="01" style="background-image:url(assets/images/slider/hm1-bg-1.jpg);">
-                            <div class="container">
-                                <div class="row align-items-center">
-                                    <div class="col-lg-5 col-md-6 col-12 col-sm-6">
-                                        <div class="slider-sin-img-hm1 slider-sin-mrg1 slider-animated-1">
-                                            <img class="animated" src="assets/images/slider/hm1-single-1.png" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-7 col-md-6 col-12 col-sm-6">
-                                        <div class="slider-content-1 slider-animated-1 ml-70">
-                                            <h3 class="animated">30% off</h3>
-                                            <h1 class="animated">Comfort Chair</h1>
-                                            <p class="animated">Collect from Daxone &amp; get 30% Discount.</p>
-                                            <div class="slider-btn-1 default-btn btn-hover">
-                                                <a class="animated btn-color-theme btn-size-md btn-style-outline" href="product-details.html">SHOP NOW</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div></div><div class="owl-item cloned" style="width: 1139px;"><div class="single-slider height-100vh bg-img" data-dot="02" style="background-image:url(assets/images/slider/hm1-bg-1.jpg);">
-                            <div class="container">
-                                <div class="row align-items-center">
-                                    <div class="col-lg-5 col-md-6 col-12 col-sm-6">
-                                        <div class="slider-sin-img-hm1 slider-sin-mrg1 slider-animated-1">
-                                            <img class="animated" src="assets/images/slider/hm1-single-2.png" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-7 col-md-6 col-12 col-sm-6">
-                                        <div class="slider-content-1 slider-animated-1 ml-70">
-                                            <h3 class="animated">30% off</h3>
-                                            <h1 class="animated">Comfort Chair</h1>
-                                            <p class="animated">Collect from Daxone &amp; get 30% Discount.</p>
-                                            <div class="slider-btn-1 default-btn btn-hover">
-                                                <a class="animated btn-color-theme btn-size-md btn-style-outline" href="product-details.html">SHOP NOW</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div></div></div></div><div class="owl-nav"><div class="owl-prev"><i class="la la-angle-up"></i></div><div class="owl-next"><i class="la la-angle-down"></i></div></div><div class="owl-dots"><div class="owl-dot active">01</div><div class="owl-dot">02</div></div></div>
+    <div class="slider-area pb-100">
+        <div class="first-screen">
+            <div class="bg-left">
+            </div>
+            <div class="hero-logo">
+                <h1 class="main-hero-h1"><span class="lg-text-h1">FERESKI</span>Производитель обуви в Украине</h1>
+                <p>Гармония качества, цены и комфорта.</p>
+                <a class="button-down" href="#about-us">
+                    <i class="la la-angle-double-down"></i>
+                </a>
+            </div>
+        </div>
     </div>
     <div class="discount-area pb-100">
         <div class="container">
@@ -134,24 +21,26 @@
                 <div class="col-lg-7 col-md-6">
                     <div class="discount-img">
                         <a href="#">
-                            <img src="assets/images/banner/banner-1.jpg" alt="discount-img">
+                            <img src="assets/images/about-us.jpg" alt="discount-img">
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-5 col-md-6">
                     <div class="discount-content">
-                        <p>Lorem Ipsum is simply dummy text of the <br>printing and typesetting industry.</p>
-                        <h2>Winter Discount <br>Up to 30%</h2>
-                        <p class="bright-color">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                        <p>Обувное производство <span class="brand-simple-text">FERESKI</span> представляет вашему<br>
+                            вниманию обувь высокого качества по демократичным ценам.</p>
+                            <h2>О компании</h2>
+                        <p class="bright-color">Более 25 лет мы непрерывно развиваем и модернизируем наше производство,
+                            улучшая его технологическое и программное оснащение, отбирая наилучшие комплектующие, а также осуществляя поиск и обучение лучших специалистов, для того чтобы обеспечивать наших покупателей продуктом наивысшего качества.</p>
                         <div class="discount-btn default-btn btn-hover">
-                            <a class="btn-color-theme btn-size-md btn-style-outline" href="product-details.html">Shop Now</a>
+                            <a class="btn-color-theme btn-size-md btn-style-outline" href="/o-nas">Подробнее</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container">
+    <!--<div class="container">
         @if(!empty($page))
         <div class="row">
             <h1>{{$page->title}}</h1>
@@ -164,7 +53,7 @@
         @else
             {{ "Db Empty!" }}
         @endif
-    </div>
+    </div>-->
 @endsection
 
 

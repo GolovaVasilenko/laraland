@@ -19,10 +19,18 @@ class PageController extends Controller
         );
     }
 
-    public function getPage(Request $request)
+    public function about(Request $request)
     {
-        return view('pages.index',
+        return view('pages.about',
             ['page' => Page::getPageBySlug($request)]
         );
+    }
+
+    public function contacts(Request $request)
+    {
+        if($request)
+            return view('pages.contacts',
+                ['page' => Page::getPageBySlug($request)]
+            );
     }
 }
