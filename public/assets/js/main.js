@@ -64,9 +64,17 @@
     });
 
     $('.popup-gallery').magnificPopup({
-        delegate: 'a',
+        delegate: 'div>a',
         type: 'image',
         tLoading: 'Загрузка изображения #%curr%...',
+        zoom: {
+            enabled: true,
+            duration: 400,
+            easing: 'ease-in-out',
+            opener: function(openerElement) {
+                return openerElement.is('img') ? openerElement : openerElement.find('img');
+            }
+        },
         gallery: {
             enabled: true,
             navigateByImgClick: true,
