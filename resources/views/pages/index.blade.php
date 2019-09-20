@@ -15,7 +15,7 @@
             </div>
         </div>
     </div>
-    <div class="discount-area pb-100">
+    <div id="about-us" class="discount-area pt-100 pb-100">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-7 col-md-6">
@@ -34,6 +34,37 @@
                             улучшая его технологическое и программное оснащение, отбирая наилучшие комплектующие, а также осуществляя поиск и обучение лучших специалистов, для того чтобы обеспечивать наших покупателей продуктом наивысшего качества.</p>
                         <div class="discount-btn default-btn btn-hover">
                             <a class="btn-color-theme btn-size-md btn-style-outline" href="/o-nas">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="collection-block pt-100 pb-100">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-12">
+                    <div class="deal-img-2 wow fadeInLeft" style="visibility: visible; animation-name: fadeInLeft;">
+                        <img src="assets/images/winter-collection/w-0010.jpg" alt="overview">
+                        <div class="deal-btn btn-hover btn-hover-radious">
+                            <a id="show-collection-w" class="black-color" href="#">Смотреть <i class="la la-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="deal-content-3">
+                        <h2><span class="brand-simple-text">FERESKI</span><br> Зимняя Колекция</h2>
+                        <div class="collection-description">
+                            <p>More text description more text words section description
+                            section chars images lorem ipsum selection bomber man solid
+                                foudation special evryone woul service katana words stop.</p>
+                            <p>More text description more text words section description
+                                section chars images lorem ipsum selection bomber man solid
+                                foudation special evryone woul service katana words stop
+                                ipsum selection bomber man.</p>
+                            <div class="discount-btn default-btn btn-hover">
+                                <a class="btn-color-theme btn-size-md btn-style-outline" href="/">Подробнее</a>
+                            </div>
                         </div>
                     </div>
                 </div>

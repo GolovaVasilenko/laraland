@@ -63,6 +63,49 @@
         }
     });
 
+    $('#show-collection-w').magnificPopup({
+        /*delegate: 'a',*/
+        type: 'image',
+        items: [
+            {
+                src: 'assets/images/winter-collection/w-0010.jpg'
+            },
+            {
+                src: 'assets/images/winter-collection/w-0009.jpg'
+            },
+            {
+                src: 'assets/images/winter-collection/w-0008.jpg'
+            },
+            {
+                src: 'assets/images/winter-collection/w-0007.jpg'
+            },
+            {
+                src: 'assets/images/winter-collection/w-0006.jpg'
+            },
+            {
+                src: 'assets/images/winter-collection/w-0005.jpg'
+            },
+            {
+                src: 'assets/images/winter-collection/w-0004.jpg'
+            },
+            {
+                src: 'assets/images/winter-collection/w-0003.jpg'
+            },
+            {
+                src: 'assets/images/winter-collection/w-0002.jpg'
+            },
+            {
+                src: 'assets/images/winter-collection/w-0001.jpg'
+            }
+        ],
+        gallery: {
+            enabled: true,
+            navigateByImgClick: true,
+            preload: [0, 1]
+        }
+
+    });
+
     $('.popup-gallery').magnificPopup({
         delegate: 'div>a',
         type: 'image',
