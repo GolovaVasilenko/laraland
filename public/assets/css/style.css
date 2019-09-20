@@ -15483,6 +15483,16 @@ h3.cart-page-title {
     width: 100%;
     height: auto;
 }
+.item-2 img {
+    margin-top: -80px;
+}
+.item-3 img {
+    margin-top: -80px;
+}
+#about-page h1 {
+    margin-bottom: 46px;
+}
+
 /* END gallery about us */
 
 @media only screen and (max-width: 767px) {

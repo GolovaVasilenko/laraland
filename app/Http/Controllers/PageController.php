@@ -21,8 +21,27 @@ class PageController extends Controller
 
     public function about(Request $request)
     {
+        $images = [
+            '0001.jpg',
+            '0002.jpg',
+            '0003.jpg',
+            '0004.jpg',
+            '0005.jpg',
+            '0006.jpg',
+            '0007.jpg',
+            '0008.jpg',
+            '0009.jpg',
+            '0010.jpg',
+            '0011.jpg',
+            '0012.jpg',
+            '0013.jpg',
+            '0014.jpg',
+        ];
+        $about = Page::getPageBySlug($request);
+        $text_data = explode('. ', strip_tags(str_replace('&nbsp;', ' ', $about->body)));
+
         return view('pages.about',
-            ['page' => Page::getPageBySlug($request)]
+            ['page' => $about, 'body' => $text_data, 'images' => $images]
         );
     }
 
