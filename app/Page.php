@@ -15,6 +15,11 @@ class Page extends Model
         return $this->hasOne(PagesTranslate::class);
     }
 
+    public function sections()
+    {
+        return $this->hasMany(Section::class);
+    }
+
     public static function getPageBySlug(Request $request)
     {
         $tmp = trim($request->getRequestUri(), '/');

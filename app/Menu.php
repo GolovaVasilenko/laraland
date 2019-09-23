@@ -27,7 +27,6 @@ class Menu extends Model
     public static function tree($name)
     {
         $menu = self::getMenu($name)->toArray();
-//dd(self::setChildren($menu));
         return self::setChildren($menu);
     }
 
