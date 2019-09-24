@@ -23,7 +23,14 @@
             if (!empty($i['children'])) {
     @endphp
             <li class="dd-item" data-id="{{ $i['id'] }}">
-                <div class="dd-handle">{{ $i['label'] }}</div>
+                <div class="dd-handle">{{ $i['label'] }}
+                    <a href="{{ route('menu.item.edit', ['id' => $i['id']]) }}" class="bg-info btn-xs item-edit-link">
+                        <i class="fa fa-edit"></i>
+                    </a>
+                    <a href="{{ route('menu.item.delete', ['id' => $i['id']]) }}" class="remove-item-js bg-danger btn-xs item-delete-link">
+                        <i class="fa fa-trash"></i>
+                    </a>
+                </div>
                 <ol class="dd-list">
                     <!--li class="dd-item" data-id="{{ $i['id'] }}">
                         <div class="dd-handle">{{ $i['label'] }}</div>

@@ -33,9 +33,6 @@ class MenuAdminWidget extends AbstractWidget
             $menu->setAttributes(['data-widget' => 'treeview', 'role' => 'menu', 'data-accordion' => 'false']);
             $menu->addClass('nav nav-pills nav-sidebar flex-column');
             foreach($menuTree as $menuItem) {
-                $menu->add(Link::to($menuItem['link'], $menuItem['label'])
-                    ->addClass('nav-link')
-                    ->addParentClass('nav-item'));
                 if(!empty($menuItem['children'])) {
                     $submenu = Menu::new();
                     $submenu->addClass('children');
@@ -46,9 +43,15 @@ class MenuAdminWidget extends AbstractWidget
                         $submenu->addClass('nav nav-treeview');
                     }
                     $menu->submenu(
-                        Link::to($menuItem['link'], $menuItem['label']),
+                        Link::to($menuItem['link'], $menuItem['label'])
+                            ->addClass('nav-link')
+                            ->addParentClass('nav-item has-treeview menu-open'),
                         $submenu
                     );
+                }else {
+                    $menu->add(Link::to($menuItem['link'], $menuItem['label'])
+                        ->addClass('nav-link')
+                        ->addParentClass('nav-item'));
                 }
                 $menu->setActive(Route::getFacadeRoot()->current()->uri())
                     ->setActiveClassOnLink();

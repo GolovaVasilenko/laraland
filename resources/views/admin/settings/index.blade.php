@@ -54,7 +54,7 @@
 
                                         <div class="col-1">
                                             <a href="{{ route('settings.delete', ['id' => $s->id]) }}"
-                                               class="btn btn-block btn-outline-danger settings-delete">
+                                               class="btn btn-block btn-outline-danger settings-delete remove-item-js">
                                                 <i class="fa fa-times"></i>
 
                                             </a>

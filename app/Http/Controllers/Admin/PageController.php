@@ -31,7 +31,7 @@ class PageController extends Controller
                 $button .= "&nbsp;&nbsp;&nbsp;";
                 $button .= '<a href="' . route('pages.remove', ['id' => $data->id]). '" name="delete"
                         id="' . $data->id . '" title="delete"
-                        class="delete btn btn-danger btn-sm">
+                        class="delete btn btn-danger btn-sm remove-item-js">
                         <i class="fa fa-times"></i></a>';
                 return $button;
             })

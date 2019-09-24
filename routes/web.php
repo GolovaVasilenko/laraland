@@ -33,6 +33,14 @@ Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth']], 
     Route::get('menu/item/edit/{id}', 'MenuController@itemEdit')->name('menu.item.edit');
     Route::get('menu/item/store/{id}', 'MenuController@itemDelete')->name('menu.item.delete');
     Route::put('menu/item/update', 'MenuController@itemUpdate')->name('menu.item.update');
+
+    Route::get('sections', 'SectionController@index')->name('sections.list');
+    Route::get('sections/add', 'SectionController@add')->name('section.add');
+    Route::post('sections', 'SectionController@store')->name('section.store');
+    Route::post('sections/edit/{id}', 'SectionController@edit')->name('section.edit');
+    Route::put('sections/update', 'SectionController@update')->name('section.update');
+    Route::delete('sections/delete/{id}', 'SectionController@delete')->name('section.delete');
+
 });
 
 Route::get('/', 'PageController@index')->name('main');
