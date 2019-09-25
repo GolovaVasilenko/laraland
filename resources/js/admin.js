@@ -13,6 +13,8 @@ require('admin-lte');
 
 require('admin-lte/plugins/datatables/jquery.dataTables.min');
 
+require('admin-lte/plugins/colorpicker/bootstrap-colorpicker.min');
+
 require('./jquery.friendurl');
 
 require('./jquery.nestable');

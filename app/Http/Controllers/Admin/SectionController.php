@@ -35,6 +35,7 @@ class SectionController extends Controller
 
     public function store(Request $request)
     {
+        dd($request->all());
         $section = new Section();
 
     }

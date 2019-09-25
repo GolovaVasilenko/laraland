@@ -6,6 +6,9 @@ jQuery(document).ready(function ($) {
         }
     });
 
+    /* Colorpicker */
+    $('.colorpicker-field').colorpicker();
+
     /* Menu Nestable */
     $('.dd').on('change', function(e) {
         var list = e.length ? e : $(e.target), output;

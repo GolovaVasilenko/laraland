@@ -42,13 +42,13 @@
                     </div>
                     <div class="form-group">
                         <label>Background color:</label>
-                        <input name="data[bgColor]" type="text" class="form-control my-colorpicker1 colorpicker-element" data-colorpicker-id="1" data-original-title="" title="">
+                        <input name="data[bgColor]" type="text" class="form-control colorpicker-field colorpicker-element" data-colorpicker-id="1" data-original-title="" title="">
                     </div>
                     <hr>
                     <div class="form-group">
                         <label for="customFile">Gallery:</label>
                         <div class="custom-file">
-                            <input type="file" name="data[gallery][]" class="custom-file-input" id="customFile">
+                            <input type="file" name="data[gallery][]" multiple class="custom-file-input" id="customFile">
                             <label class="custom-file-label" for="customFile">Choose file</label>
                         </div>
                     </div>
