@@ -37,9 +37,9 @@ Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth']], 
     Route::get('sections', 'SectionController@index')->name('sections.list');
     Route::get('sections/add', 'SectionController@add')->name('section.add');
     Route::post('sections', 'SectionController@store')->name('section.store');
-    Route::post('sections/edit/{id}', 'SectionController@edit')->name('section.edit');
+    Route::get('sections/edit/{id}', 'SectionController@edit')->name('section.edit');
     Route::put('sections/update', 'SectionController@update')->name('section.update');
-    Route::delete('sections/delete/{id}', 'SectionController@delete')->name('section.delete');
+    Route::get('sections/delete/{id}', 'SectionController@delete')->name('section.delete');
 
 });
 

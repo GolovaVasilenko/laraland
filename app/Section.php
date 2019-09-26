@@ -10,6 +10,8 @@ class Section extends Model implements HasMedia
 {
     use HasMediaTrait;
 
+    protected $fillable = ['idName', 'className', 'type', 'page_id'];
+
     public function translate()
     {
         return $this->hasOne('App\SectionTranslate');

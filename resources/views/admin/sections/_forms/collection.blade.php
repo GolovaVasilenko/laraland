@@ -20,7 +20,7 @@
                     </div>
                     <div class="form-group">
                         <label for="className">Section for Page</label>
-                        <select id="className" class="form-control" name="className">
+                        <select id="className" class="form-control" name="page_id">
                             @foreach($pages as $page)
                             <option value="{{ $page->id }}">{{ $page->translate->title }}</option>
                             @endforeach
@@ -48,7 +48,7 @@
                     <div class="form-group">
                         <label for="customFile">Gallery:</label>
                         <div class="custom-file">
-                            <input type="file" name="data[gallery][]" multiple class="custom-file-input" id="customFile">
+                            <input type="file" name="images[gallery][]" multiple class="custom-file-input" id="customFile">
                             <label class="custom-file-label" for="customFile">Choose file</label>
                         </div>
                     </div>
