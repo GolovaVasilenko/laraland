@@ -14,8 +14,17 @@ class PageController extends Controller
      */
     public function index()
     {
+        $media = [];
+        $home = Page::getHomePage();
+        foreach($home->sections as &$section) {
+            $section->translate->data = unserialize($section->translate->data);
+            if($section->getMedia('media')->count() > 0) {
+                //$section->media = $section->getMedia('media');
+            }
+        }
+        //dd($home);
         return view('pages.index',
-            ['page' => Page::getHomePage()]
+            ['page' => $home]
         );
     }
 

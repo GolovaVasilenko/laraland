@@ -40,51 +40,40 @@
             </div>
         </div>
     </div>
-    <div class="collection-block pt-100 pb-100">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-md-12">
-                    <div class="deal-img-2 wow fadeInLeft" style="visibility: visible; animation-name: fadeInLeft;">
-                        <img src="assets/images/winter-collection/w-0010.jpg" alt="overview">
-                        <div class="deal-btn btn-hover btn-hover-radious">
-                            <a id="show-collection-w" class="black-color" href="#">Смотреть <i class="la la-arrow-right"></i></a>
+    @foreach($page->sections as $section)
+    <section id="{{ $section->idName }}"
+        <div class="collection-block {{ $section->className }} pt-100 pb-100">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="deal-img-2 wow fadeInLeft list-url-img" style="visibility: visible; animation-name: fadeInLeft;"
+                            data-count="{{ $section->media->count() }}"
+                        >
+                            @foreach($section->media as $img)
+                                <input type="hidden" class="gallery-collection-items" data-id="{{ $img->id }}" data-url="{{ $img->getUrl() }}"/>
+                            @endforeach
+                            <img src="{{ $section->getFirstMediaUrl('media') }}" alt="overview">
+                            <div class="deal-btn btn-hover btn-hover-radious">
+                                <a id="show-collection-w" class="black-color" href="#">Смотреть <i class="la la-arrow-right"></i></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-6 col-md-12">
-                    <div class="deal-content-3">
-                        <h2><span class="brand-simple-text">FERESKI</span><br> Зимняя Колекция</h2>
-                        <div class="collection-description">
-                            <p>More text description more text words section description
-                            section chars images lorem ipsum selection bomber man solid
-                                foudation special evryone woul service katana words stop.</p>
-                            <p>More text description more text words section description
-                                section chars images lorem ipsum selection bomber man solid
-                                foudation special evryone woul service katana words stop
-                                ipsum selection bomber man.</p>
-                            <div class="discount-btn default-btn btn-hover">
-                                <a class="btn-color-theme btn-size-md btn-style-outline" href="/">Подробнее</a>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="deal-content-3">
+                            <h2><span class="brand-simple-text">{{$section->translate->data['title']}}</h2>
+                            <div class="collection-description">
+                                {{$section->translate->data['description']}}
+                                <div class="discount-btn default-btn btn-hover">
+                                    <a class="btn-color-theme btn-size-md btn-style-outline" href="/">Подробнее</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!--<div class="container">
-        @if(!empty($page))
-        <div class="row">
-            <h1>{{$page->title}}</h1>
-        </div>
-        <div class="row">
-            <div class="content-body">
-                {{$page->body}}
-            </div>
-        </div>
-        @else
-            {{ "Db Empty!" }}
-        @endif
-    </div>-->
+    </section>
+    @endforeach
 @endsection
 
 

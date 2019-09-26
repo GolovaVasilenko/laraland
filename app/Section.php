@@ -19,6 +19,6 @@ class Section extends Model implements HasMedia
 
     public function page()
     {
-        return $this->belongsTo('App\Page');
+        return $this->belongsTo(Page::class);
     }
 }

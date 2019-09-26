@@ -31,7 +31,7 @@
                         <tr>
                             <td>{{ $section->id }}</td>
                             <td>{{ $section->idName }}</td>
-                            <td>{{ $section->page->title }}</td>
+                            <td>{{ $section->page->translate->title }}</td>
                             <td>
                                 <a class="edit btn btn-info btn-sm" href="{{ route('section.edit', ['id' => $section->id]) }}">
                                     <i class="fa fa-edit"></i>

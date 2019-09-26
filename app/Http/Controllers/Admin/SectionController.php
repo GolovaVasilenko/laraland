@@ -15,9 +15,8 @@ class SectionController extends Controller
     public function index()
     {
         $sections = Section::with(['translate' => function($query){
-            $query->where('lang', App::getLocale());
-        } , 'page'])
-            ->get();
+            return $query->where('lang', App::getLocale());
+        }])->get();
 
         return view('admin.sections.index', [
             'sections' => $sections
@@ -27,7 +26,7 @@ class SectionController extends Controller
     public function add()
     {
         $pages = Page::with(['translate' => function($query) {
-            $query->where('lang', App::getLocale());
+            return $query->where('lang', App::getLocale());
         }])->get();
 
         return view('admin.sections.add', [
@@ -59,11 +58,20 @@ class SectionController extends Controller
 
     public function edit($id)
     {
-        $section = Section::find($id);
-        //dd($section->getMedia('default'));
+        $section = Section::with(['translate' => function($query){
+            return $query->where('lang', App::getLocale());
+        }])->where('id', $id)->first();
+
+        $section->translate->data = unserialize($section->translate->data);
+
+        $pages = Page::with(['translate' => function($query) {
+            $query->where('lang', App::getLocale());
+        }])->get();
+
         return view('admin.sections.edit', [
             'section' => $section,
-            'media' => $section->getMedia('media')
+            'media' => $section->getMedia('media'),
+            'pages' => $pages,
         ]);
     }
 
