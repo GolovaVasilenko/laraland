@@ -26,7 +26,8 @@
                 </div>
                 <div class="card-body">
                     <form method="post" action="{{ route('section.update') }}" enctype="multipart/form-data">
-                    @include('admin.sections._forms.' . $section->type)
+                        @method('put')
+                        @include('admin.sections._forms.' . $section->type)
                     </form>
                 </div>
             </div>

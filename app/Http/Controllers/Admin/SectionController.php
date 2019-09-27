@@ -77,7 +77,24 @@ class SectionController extends Controller
 
     public function update(Request $request)
     {
+        $section = Section::with(['translate' => function($query) {
+            return $query->where('lang', App::getLocale());
+        }])->where('id', $request->get('id'))->first();
 
+        $section->idName = $request->get('idName');
+        $section->className = $request->get('className');
+        $section->type = $request->get('type');
+        $section->page_id = $request->get('page_id');
+        $section->save();
+
+        $section->translate()->update([
+            'lang' => $request->get('lang'),
+            'data' => serialize($request->get('data')),
+        ]);
+
+        return redirect()
+            ->route('section.edit', ['id' => $request->get('id')])
+            ->with(['flash_message'=> 'Секция успешно отредактирована']);
     }
 
     public function delete($id)
