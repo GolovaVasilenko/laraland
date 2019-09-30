@@ -2,12 +2,23 @@
 
 @section('content')
     @php $count = 0; @endphp
-    <section id="about-page" class="about pt-180 pb-100">
+    <div class="breadcrumb-area bg-header-block">
+        <div class="container">
+            <div class="breadcrumb-content text-center">
+                <h1>{{$page->title}}</h1>
+                <ul>
+                    <li>
+                        <a href="/">Главная</a>
+                    </li>
+                    <li class="active">О компании</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <section id="about-page" class="about pt-100 pb-100">
     <div class="container">
         @if(!empty($page))
-        <div class="row">
-            <h1>{{$page->title}}</h1>
-        </div>
+
         @foreach($body as $b)
             @break(empty($images))
         <div class="row">

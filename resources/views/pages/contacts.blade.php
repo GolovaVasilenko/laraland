@@ -1,11 +1,23 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class="breadcrumb-area bg-header-block">
+        <div class="container">
+            <div class="breadcrumb-content text-center">
+                <h1>{{$page->title}}</h2>
+                <ul>
+                    <li>
+                        <a href="/">Главная</a>
+                    </li>
+                    <li class="active">Контактная информация</li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <section class="about pt-120 pb-100">
         <div class="container">
             @if(!empty($page))
                 <div class="contact-info-wrap mb-50">
-                    <h3>{{$page->title}}</h3>
                     <div class="row">
                         <div class="col-lg-4 col-md-4">
                             <div class="single-contact-info text-center mb-30">
@@ -17,9 +29,9 @@
                         <div class="col-lg-4 col-md-4">
                             <div class="single-contact-info extra-contact-info text-center mb-30">
                                 <ul>
-                                    <li><i class="ti-mobile"></i> <strong>{{ $sales->label }}</strong><br>{{ $sales->value }}</li>
-                                    <li><i class="ti-mobile"></i><strong>{{ $other->label }}</strong><br>{{ $other->value }}</li>
-                                    <li><i class="ti-email"></i> <a href="#"> info@example.com</a></li>
+                                    <li><i class="ti-mobile"></i> <strong>{{ $sales->label }}</strong><br><span style="max-width:160px; display:block; margin:0 auto;">{{ $sales->value }}</span><br><strong>{{ $other->label }}</strong><br>{{ $other->value }}</li>
+
+                                    <!--<li><i class="ti-email"></i> <a href="#"> info@example.com</a></li>-->
                                 </ul>
                             </div>
                         </div>

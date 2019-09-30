@@ -10977,7 +10977,10 @@ button, input, optgroup, select, textarea {
 .discount-content p.bright-color {
   color: #373737;
   width: 83%;
-  margin: 0 0 8px;
+  margin: 0 0 22px;
+}
+.discount-btn {
+    margin-top: 22px;
 }
 
 @media only screen and (max-width: 767px) {
@@ -15766,6 +15769,12 @@ h3.cart-page-title {
   border: 1px solid #ebebeb;
   border-radius: 5px;
   padding: 45px 30px 50px;
+}
+.bg-header-block {
+    background-color:#f7eedf;
+}
+.single-contact-info {
+    background-color: #FEF5E6 !important;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
