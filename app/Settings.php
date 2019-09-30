@@ -50,6 +50,6 @@ class Settings extends Model
 
     public static function getValue($key)
     {
-        return self::where('key', $key)->pluck('value')->first();
+        return self::where('key', $key)->first();
     }
 }

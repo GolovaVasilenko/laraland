@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Page;
+use App\Settings;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -56,9 +57,15 @@ class PageController extends Controller
 
     public function contacts(Request $request)
     {
-        if($request)
-            return view('pages.contacts',
-                ['page' => Page::getPageBySlug($request)]
+        if(trim($request->getRequestUri(), '/') == 'kontauti')
+            return view('pages.contacts', [
+                    'page' => Page::getPageBySlug($request),
+                    'sales' => Settings::getValue('sales-contact'),
+                    'other' => Settings::getValue('push-contact'),
+                    'map' => Settings::getValue('map'),
+                    'address' => Settings::getValue('address'),
+                    'schedule' => Settings::getValue('schedule'),
+                ]
             );
     }
 }

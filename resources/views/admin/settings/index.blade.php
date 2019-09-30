@@ -26,7 +26,8 @@
                             @foreach($settings as $s)
                                 @if($g == $s->group)
                                     <div class="row settings-root-group">
-                                        <span class="col-5 settings-label-key"><strong>{{ $s->label }}:</strong></span>
+                                        <span class="col-3 settings-label-key"><strong>{{ $s->label }}:</strong></span>
+                                        <div class="col-2 settings-system-name">{{ $s->key }}</div>
                                         <div class="col-5 settings-label-value">
                                             @if($s->type == 'checkbox')
                                                 <div class="form-group">
